@@ -1,0 +1,46 @@
+{
+    
+    "manifest_version": 2,
+    "name": "EasyEnglish",
+    "version": "1.0.0",
+    "description": "合工大Unipus英语平台刷题插件",
+    
+    "icons":
+    {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "background":
+    {
+        "page": "background.html"
+    },
+    "browser_action": 
+    {
+        "default_icon": "img/icon.png",
+        "default_title": "刷新页面显示参考答案",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": 
+    [
+        {
+            "matches": ["http://114.213.201.29/book/book184/*", "https://114.213.201.29/book/book184/*"],
+            "js": ["js/jquery-1.8.3.js", "js/content-script.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "permissions":
+    [
+        "contextMenus", 
+        "tabs", 
+        "notifications", 
+        "webRequest", 
+        "webRequestBlocking",
+        "storage", 
+        "http://*/*", 
+        "https://*/*" 
+    ],
+    "homepage_url": "https://www.xindelvcheng.com"
+}
